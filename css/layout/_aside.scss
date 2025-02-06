@@ -1,0 +1,71 @@
+.asideMenu {
+    width: 300px;
+    background: #00000094;
+    @include ab-lt(0, 0);
+    height: 100vh;
+    border-right: 5px solid #fed201;
+    transform: translateX(-295px);
+    transition: all 0.5s;
+    z-index: 50;
+    position: fixed;
+  
+
+    &.active {
+        transform: translateX(0px);
+    }
+    .asideBtn{
+        @include ab-rt(-38px, 50%);
+        cursor: pointer;
+        background-color: #fed201;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        padding: 40px 10px;
+        .fa-chevron-right{
+            color: #fff;
+            transition: all 0.5s;
+            transform: rotate(180deg);
+            &.rotate {
+                transform: rotate(0deg);
+            }
+
+        }
+    }
+    .aside_nav{
+        height: 100vh;
+        text-align: center;
+        margin-top: 120px;
+        padding: 40px;
+
+        .navli{
+            border-bottom: 2px #fed201 solid;
+            padding: 50px 0;
+            &:last-child{
+            border-bottom:none ;
+            }
+        }
+        li {
+            cursor: pointer;
+            color: #fff;
+            font-size: 23px;
+            font-weight: 600;
+            opacity: .5;
+            transition: all .2s linear;
+            &:hover{
+                opacity: 1;
+            }
+            &:active{
+                opacity: 1;
+            }
+            a{
+            color: #fff;
+            font-size: 23px;
+            font-weight: 600;
+            }
+        }
+
+    }
+
+
+   
+            
+}

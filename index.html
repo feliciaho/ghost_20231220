@@ -1,0 +1,246 @@
+<?php
+  function getValue($method, $string) {  
+    $str = explode(",", $string);  
+    $max=sizeof($str);  
+    for($i=0; $i<$max; $i++) {    
+      $tmp = trim($str[$i]);    
+      global $$tmp;    
+      switch ($method) {      
+        case "GET" :       
+          $tmp = $_GET[$tmp];      
+          break;      
+        case "POST" :        
+          $$tmp = $_POST[$tmp];        
+          break;      
+        case "COOKIE" :        
+          $$tmp = $_COOKIE[$tmp];        
+          break;      
+        case "SERVER" :        
+          $$tmp = $_SERVER[$tmp];        
+          break;      
+        case "REQUEST" :        
+          $$tmp = $_REQUEST[$tmp];        
+          break;    
+      }    
+      $$tmp = trim($$tmp);  
+    }
+  }
+
+  $_COOKIE_DOMAIN=".digeam.com";
+
+  if($_COOKIE["StrID"]){
+    $GO_StrID   = $_COOKIE["StrID"];
+    $dbconn = pg_connect("host=219.84.167.145 port=15030 dbname=guihon user=web_user password=web_user! options='--client_encoding=UTF-8'");
+    $result = pg_query($dbconn, "SELECT * FROM web_get_all_char_info('".$GO_StrID."');");
+  } else {
+    $GO_StrID   = '';
+    SetCookie("return_url",base64_encode("https://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]),0,"/",$_COOKIE_DOMAIN);
+  }
+  include "/var/www/html/digeamweb/inc/wcf.php";
+
+  getValue("REQUEST","code");
+
+  require_once '/var/www/html/digeamweb/common/Mobile_Detect.php';
+    $detect = new Mobile_Detect;
+
+    $nowDate=date("YmdHis");
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="《搞鬼Online》聖誕轉轉樂" />
+    <meta property="og:image" content="https://go.digeam.com/event/20231220/img/share.png" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:type" content="website" />
+    <meta property="fb:app_id" content="309206082919411" />
+    <meta property="og:info" content="由韓國Mgame授權、Digeam 掘夢網代理的東方玄奇題材2D橫向卷軸線上遊戲" />
+    <meta property="og:url" content="https://go.digeam.com/home/" />
+    <meta property="og:site_name" content="搞鬼online - go.digeam.com" />
+    <meta property="og:locale" content="zh_tw" />
+    <meta property="article:author" content="https://www.facebook.com/DigeamGO/" />
+    <meta name="author" content="DiGeam" />
+    <meta name="info" content="由韓國Mgame授權、Digeam 掘夢網代理的東方玄奇題材2D橫向卷軸線上遊戲" />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <link rel="icon" href="https://go.digeam.com/images/favicon.ico" sizes="16x16">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>《搞鬼Online》聖誕轉轉樂</title>
+</head>
+
+<body>
+    <div class="main">
+        <nav class="nav">
+            <div class="nav_wrap">
+                <a href="https://go.digeam.com/home/" title="官方網站" class="logo"><img src="/img/logo.png" alt=""></a>
+                <div class="list_wrap">
+                    <div class="acc-content">
+                        <div class="sign_box">
+                            <?php if(isset($_COOKIE['StrID']) && $_COOKIE['StrID'] != null){?>
+                            <?php if($_COOKIE["StrID"]){  ?>
+                            <form id="logout-form" action="https://www.digeam.com/logout" method="POST"
+                                style="display: none;">
+                                <input type="hidden" name="return_url" id="return_url"
+                                    value="<?php echo base64_encode('https://'.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]); ?>">
+                            </form>
+                            <?php } ?>
+                            <ul class="player_acc">
+                                <li class="acc_txt">目前帳號:</li>
+                                <li class="acc id">
+                                    <?php echo $_COOKIE['StrID']?>
+                                </li>
+                                <li class="acc_txt">目前點數:</li>
+                                <li class="acc point">0</li>
+                            </ul>
+                            <button class="btn_signOut" onclick="logout_dg()">登出</button>
+                            <?php }else{?>
+                            <ul class="player_acc">
+                                <li class="acc_txt">目前帳號:</li>
+                                <li class="acc id">請先登入會員</li>
+                                <li class="acc_txt">目前點數:</li>
+                                <li class="acc point">0</li>
+                            </ul>
+                            <div class="btn_sign"><a href="https://www.digeam.com/login"></a>登入</div>
+                            <?php }?>
+
+                        </div>
+                        <div class="nav_list">
+                            <a href="https://www.digeam.com/register"><i class="fa-solid fa-user-plus item fa-xl"
+                                    title="會員註冊"></i></a>
+                            <a href="https://go.digeam.com/download/" target="_blank"><i
+                                    class="fa-solid fa-download item fa-xl" title="遊戲下載"></i></a>
+                            <a href="https://www.facebook.com/DigeamGO/" target="_blank"><i
+                                    class="fa-brands fa-facebook item fa-xl" title="粉絲團"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- popup -->
+        <div id="particles-js"></div>
+        <!-- <span class="js-count-particles">--</span> particles </div>  -->
+        <div class="mask2"></div>
+        <div class="mask1"></div>
+        <div class="mask"></div>
+        <div class="mask0"></div>
+        <div class="pop_wrap1">
+            <div class="pop_box">
+                <div class="goldNotice">
+                </div>
+            </div>
+        </div>
+        <div class="pop_wrap2">
+            <div class="pop_box2">
+            </div>
+        </div>
+        <!-- menu -->
+        <div class="menu">
+            <ul class="menu-wrap">
+                <li class="menus1"><a href="#sec1">首頁</a></li>
+                <li class="menus2"><a href="#sec2">聖誕轉轉樂</a></li>
+                <li class="description pop" data-val="description">活動說明​</a></li>
+                <li class="lottery pop" data-val="lottery">轉盤獎池內容</li>
+                <li class="history pop" data-val="history">活動紀錄</li>
+                <li class="reward pop" data-val="reward">回饋專區​​</li>
+                <li class="notice pop" data-val="notice">注意事項</li>
+            </ul>
+        </div>
+        <!-- s1 -->
+        <section class="sec1" id="sec1">
+            <div class="content">
+                <div class="title"></div>
+            </div>
+        </section>
+        <!-- s2 -->
+        <section class="sec2" id="sec2">
+            <!-- 中間按鈕區 -->
+            <div class="content">
+                <div class="accumulation_txt">
+                    <div class="sockBtn"></div>
+                    <p class="lotteryAmount">0000</p>
+                    <p class="sockAmount">000</p>
+                </div>
+                <div class="refresh">
+                    <p class="refreshAmount">00000</p>
+                </div>
+                <div class="refreshBtn"></div>
+            </div>
+            <!-- 樂透球球區 -->
+            <div class="container" id="js-lotto">
+                <div class="square gold" id="gold" data-order="0">
+                    <div class="icon_box"></div>
+                </div>
+                <div class="square" data-order="1">
+                </div>
+                <div class="square" data-order="2">
+                </div>
+                <div class="square" data-order="3">
+                </div>
+                <div class="square" data-order="4">
+                </div>
+                <div class="square" id="col">
+                    <div class="square__content">
+                    </div>
+                </div>
+                <div class="square" id="silver" data-order="5">
+                </div>
+                <div class="square" data-order="6">
+                </div>
+                <div class="square" id="bronze" data-order="7">
+                </div>
+                <div class="square" data-order="8">
+                </div>
+                <div class="square" data-order="9">
+                </div>
+                <!-- 略過確認區 -->
+                <div class="s2Btn">
+                    <div class="startBtn1" id="js-start1"></div>
+                    <div class="startBtn10" id="js-start10"></div>
+                    <div class="approve">
+                        <img src="/img/pass.png" class="approve_box" data-approve="false">
+                        <p>略過確認</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footerwrap">
+            <div class="digeam"></div>
+            <div class="mgame"></div>
+            <div class="DGcopy">
+                <div class="dg-name">掘夢網股份有限公司 ©2022</div>
+                <div>Copyright © DiGeam Corporation. All Rights Reserved.</div>
+                <div>客服信箱: <a href="https://www.digeam.com/cs" target="_blank">www.digeam.com/cs</a> | 官方網站: <a
+                        href="https://www.digeam.com" target="_blank">www.digeam.com</a></div>
+            </div>
+            <div class="grade">
+                <picture>
+                    <img src="/img/footer/12plus.png" alt="">
+                </picture>
+                <p>
+                    本遊戲為免費使用，部分內容涉及暴力情節。</br>
+                    遊戲內另提供購買虛擬遊戲幣、物品等付費服務。</br>
+                    請注意遊戲時間，避免沉迷。</br>
+                    本遊戲服務區域包含台灣、香港、澳門。
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/8fc6fbbbd3.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/popcontent.js"></script>
+    <script type="text/javascript" src="./js/popsheet.js"></script>
+    <script type="text/javascript" src="./js/lottery.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+    <script type="text/javascript" src="./js/popup.js"></script>
+    <script type="text/javascript" src="./js/snow.js"></script>
+</body>
+
+</html>

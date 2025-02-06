@@ -1,0 +1,186 @@
+.sec2 {
+  @include size(1915px, 975px);
+  background-image: url("/img/s2bg.jpg");
+  @include re-lt(0px, 0px);
+  z-index: 3;
+
+  .content {
+    z-index: 4;
+    position: absolute;
+    padding-top: 320px;
+    padding-left: 820px;
+    @extend %col-center;
+
+    // 中間文字區
+    .accumulation_txt {
+      display: flex;
+      align-items: center;
+      background-image: url(/img/sockBg.png);
+      @include size(450px, 74px);
+
+      // 聖誕襪區
+      .sockBtn {
+        background-image: url(/img/scok.png);
+        @include size(74px, 96px);
+        margin-left: -20px;
+        cursor: pointer;
+        &.active {
+          @extend %ani-box;
+        }
+        &:hover {
+          scale: 1.1;
+          transition: .2s ease-in-out;
+        }
+      }
+
+      p {
+        font-size: 24px;
+        font-weight: 700;
+        color: #632510;
+        position: absolute;
+      }
+
+      .lotteryAmount {
+        left: 126px;
+      }
+
+      .sockAmount {
+        left: 278px;
+      }
+    }
+
+    // 累積刷新次數
+    .refresh {
+      background-image: url(/img/renewBg.png);
+      @include size(306px, 72px);
+      @extend %flex-center;
+
+      p {
+        font-size: 24px;
+        font-weight: 700;
+        color: #632510;
+        margin-left: 120px;
+      }
+
+    }
+
+    // 刷新按鈕
+    .refreshBtn {
+      background-image: url(/img/renewBut.png);
+      @include size(264px, 102px);
+      cursor: pointer;
+
+      &:hover {
+        transition: .3s ease-in-out;
+        filter: brightness(1.1) drop-shadow(0px 0px 5px rgba(255, 241, 184, 0.8));
+      }
+    }
+  }
+
+  // 球球樂透區
+  .container {
+    @extend %flex-center;
+    flex-wrap: wrap;
+    width: 1200px;
+    padding-top: 75px;
+    margin-left: 430px;
+
+    .square {
+      @extend %flex-center;
+      @include size(237px, 206px);
+      background-image: url("/img/green.png");
+      margin: 20px 25px;
+
+      &.is-active {
+        filter: brightness(1.8) drop-shadow(0px 0px 15px rgba(255, 230, 0, 2));
+      }
+
+      img {
+        padding: 52px;
+        scale: 1.5;
+      }
+
+      p {
+        font-weight: 1000;
+        text-align: center;
+        font-size: 19px;
+        color: #ffffff;
+        text-shadow: 0px 0px 3px #000000, 0px 0px 3px #000000, 0px 0px 3px #000000, 0px 0px 3px #000000;
+        -webkit-text-stroke: 0.3px #000000;
+      }
+    }
+
+    #col {
+      background-image: none;
+      width: 530px;
+    }
+
+    #gold {
+      background-image: url(/img/gold.png);
+    }
+
+    #silver {
+      background-image: url(/img/silver.png);
+
+    }
+
+    #bronze {
+      background-image: url(/img/bronze.png);
+
+    }
+
+    // 下方按鈕區
+    .s2Btn {
+      @extend %flex-center;
+      margin-top: -10px;
+
+      // 略過確認按鈕
+      .approve {
+        @extend %flex-center;
+        margin-left: 30px;
+        font-size: 20px;
+        font-weight: 600;
+
+        img {
+          margin-right: 5px;
+        }
+
+        p {
+          color: #fff;
+        }
+
+        cursor: pointer;
+
+      }
+
+      // 轉一次轉十次按鈕
+      .startBtn1 {
+        margin-left: 100px;
+        cursor: pointer;
+        background-image: url(/img/oneBut.png);
+        @include size(264px, 102px);
+
+        &:hover {
+          transition: .3s ease-in-out;
+          filter: brightness(1.1) drop-shadow(0px 0px 5px rgba(255, 241, 184, 0.8));
+        }
+
+      }
+
+      .startBtn10 {
+        margin-left: 150px;
+        cursor: pointer;
+        background-image: url(/img/tenBut.png);
+        @include size(264px, 102px);
+
+        &:hover {
+          transition: .3s ease-in-out;
+          filter: brightness(1.1) drop-shadow(0px 0px 5px rgba(255, 241, 184, 0.8));
+        }
+
+
+      }
+    }
+
+  }
+}
