@@ -1,6 +1,6 @@
 .main{
     .menu{
-        background-image:url("/img/menuBg.png");
+        background-image:url("../img/menuBg.png");
         @include size(308px, 523px);
         position: fixed;
         top:25%;
@@ -25,7 +25,7 @@
                     content: "";
                     position: absolute;
                     margin-left: -218px;
-                    background-image: url("/img/menuHover.png");
+                    background-image: url("../img/menuHover.png");
                     @include size(35px,35px);
                     scale: 0.9;
                     transition: .1s;

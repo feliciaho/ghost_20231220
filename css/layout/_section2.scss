@@ -1,6 +1,6 @@
 .sec2 {
   @include size(1915px, 975px);
-  background-image: url("/img/s2bg.jpg");
+  background-image: url("../img/s2bg.jpg");
   @include re-lt(0px, 0px);
   z-index: 3;
 
@@ -15,12 +15,12 @@
     .accumulation_txt {
       display: flex;
       align-items: center;
-      background-image: url(/img/sockBg.png);
+      background-image: url(../img/sockBg.png);
       @include size(450px, 74px);
 
       // 聖誕襪區
       .sockBtn {
-        background-image: url(/img/scok.png);
+        background-image: url(../img/scok.png);
         @include size(74px, 96px);
         margin-left: -20px;
         cursor: pointer;
@@ -51,7 +51,7 @@
 
     // 累積刷新次數
     .refresh {
-      background-image: url(/img/renewBg.png);
+      background-image: url(../img/renewBg.png);
       @include size(306px, 72px);
       @extend %flex-center;
 
@@ -66,7 +66,7 @@
 
     // 刷新按鈕
     .refreshBtn {
-      background-image: url(/img/renewBut.png);
+      background-image: url(../img/renewBut.png);
       @include size(264px, 102px);
       cursor: pointer;
 
@@ -88,7 +88,7 @@
     .square {
       @extend %flex-center;
       @include size(237px, 206px);
-      background-image: url("/img/green.png");
+      background-image: url("../img/green.png");
       margin: 20px 25px;
 
       &.is-active {
@@ -116,16 +116,16 @@
     }
 
     #gold {
-      background-image: url(/img/gold.png);
+      background-image: url(../img/gold.png);
     }
 
     #silver {
-      background-image: url(/img/silver.png);
+      background-image: url(../img/silver.png);
 
     }
 
     #bronze {
-      background-image: url(/img/bronze.png);
+      background-image: url(../img/bronze.png);
 
     }
 
@@ -157,7 +157,7 @@
       .startBtn1 {
         margin-left: 100px;
         cursor: pointer;
-        background-image: url(/img/oneBut.png);
+        background-image: url(../img/oneBut.png);
         @include size(264px, 102px);
 
         &:hover {
@@ -170,7 +170,7 @@
       .startBtn10 {
         margin-left: 150px;
         cursor: pointer;
-        background-image: url(/img/tenBut.png);
+        background-image: url(../img/tenBut.png);
         @include size(264px, 102px);
 
         &:hover {

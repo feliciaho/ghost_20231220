@@ -2,7 +2,7 @@
 
 .footer {
     position: relative;
-    background-image: url(/img/footerBg.jpg);
+    background-image: url(../img/footerBg.jpg);
     @include size(1915px, 100px);
     font-size: 12px;
     z-index: 0;
@@ -15,14 +15,14 @@
 
         .digeam {
             @include size(133px, 32px);
-            background: url("/img/footer/digeamlogo.png") no-repeat center center;
+            background: url("../img/footer/digeamlogo.png") no-repeat center center;
             background-size: 100%;
             color: black;
          
         }
         .mgame {
             @include size(149px, 50px);
-            background: url("/img/footer/mlogo.png") no-repeat center center; 
+            background: url("../img/footer/mlogo.png") no-repeat center center; 
             background-size: 100%;
             color: black;
             margin-left: 20px;
