@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.sec2 .container .s2Btn .approve, .sec2 .container .s2Btn, .sec2 .container .square, .sec2 .container, .sec2 .content .refresh, .main .pop_wrap2 .pop_box2 .pop_btn .pop_cancel, .main .pop_wrap2 .pop_box2 .pop_btn .pop_confirm a, .main .pop_wrap2 .pop_box2 .pop_btn .pop_confirm, .main .pop_wrap2 .pop_box2 .pop_btn, .main .pop_wrap1 .pop_box .pop_content1 .confirmBtn, .main .pop_wrap1 .pop_box .pop_content1 .icon_list, .footer .footerwrap {
+.sec2 .container .s2Btn .approve, .sec2 .container .s2Btn, .sec2 .container .square, .sec2 .container, .sec2 .content .refresh, .sec2, .main .pop_wrap2 .pop_box2 .pop_btn .pop_cancel, .main .pop_wrap2 .pop_box2 .pop_btn .pop_confirm a, .main .pop_wrap2 .pop_box2 .pop_btn .pop_confirm, .main .pop_wrap2 .pop_box2 .pop_btn, .main .pop_wrap1 .pop_box .pop_content1 .confirmBtn, .main .pop_wrap1 .pop_box .pop_content1 .icon_list, .footer .footerwrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,7 +191,6 @@ html ::-webkit-scrollbar-track {
 }
 
 .main {
-  width: 100%;
   height: auto;
   z-index: 1;
   display: block;
@@ -212,7 +211,6 @@ html ::-webkit-scrollbar-track {
 }
 .main .sec1 .content .title {
   margin-top: 125px;
-  margin-left: 25px;
   width: 635px;
   height: 484px;
   background-image: url(../img/s1Title.png);
@@ -403,8 +401,6 @@ html ::-webkit-scrollbar-track {
   font-weight: 700;
 }
 .footer .footerwrap {
-  width: 1915px;
-  height: 93px;
   color: black;
 }
 .footer .footerwrap .digeam {
@@ -708,7 +704,7 @@ html ::-webkit-scrollbar-track {
 
 .sec2 {
   width: 2200px;
-  height: 1080px;
+  height: 1118px;
   background-image: url(../img/s2Bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -720,8 +716,6 @@ html ::-webkit-scrollbar-track {
 .sec2 .content {
   z-index: 4;
   position: absolute;
-  padding-top: 320px;
-  padding-left: 820px;
 }
 .sec2 .content .accumulation_txt {
   display: flex;
@@ -777,8 +771,7 @@ html ::-webkit-scrollbar-track {
 .sec2 .container {
   flex-wrap: wrap;
   width: 1200px;
-  padding-top: 75px;
-  margin-left: 430px;
+  margin-top: 75px;
 }
 .sec2 .container .square {
   width: 237px;

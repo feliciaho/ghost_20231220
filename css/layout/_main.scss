@@ -1,5 +1,4 @@
 .main {
-    width: 100%;
     height: auto;
     z-index: 1;
     display: block;
@@ -16,7 +15,6 @@
             align-items: center;
             .title {
                 margin-top: 125px;
-                margin-left: 25px;
                 @include size(635px, 484px);
                 background-image: url(../img/s1Title.png);
             }
