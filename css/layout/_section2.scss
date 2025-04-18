@@ -1,18 +1,15 @@
 .sec2 {
-  @include size(100%, 975px);
+  @include size(2200px, 1118px);
   background-image: url(../img/s2Bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   @include re-lt(0px, 0px);
+  @extend %flex-center;
   z-index: 3;
-
   .content {
     z-index: 4;
-    position: absolute;
-    padding-top: 320px;
-    padding-left: 820px;
     @extend %col-center;
-
+    position: absolute;
     // 中間文字區
     .accumulation_txt {
       display: flex;
@@ -84,9 +81,7 @@
     @extend %flex-center;
     flex-wrap: wrap;
     width: 1200px;
-    padding-top: 75px;
-    margin-left: 430px;
-
+    margin-top: 75px;
     .square {
       @extend %flex-center;
       @include size(237px, 206px);

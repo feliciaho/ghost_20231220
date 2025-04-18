@@ -156,7 +156,7 @@ function login() {
       let itemId = res.lotteryList[i].id;
       $('.square[data-order="' + i + '"]').html(
         `<div class="lottery_box" data-id="${itemId}">
-              <img src="https://feliciaho.github.io/ghost_20231220/img/icon/${itemImage}.jpg" >
+              <img src="img/icon/${itemImage}.jpg" >
               <p>${itemName}</p>
             </div>`
       );
@@ -258,7 +258,7 @@ function lottery_func(_num) {
       res.result.forEach((i) => {
         loStr += `
         <div class="icon_box">
-        <img src="https://feliciaho.github.io/ghost_20231220/img/icon/${i.img}.jpg" alt="">
+        <img src="img/icon/${i.img}.jpg" alt="">
         <p>${i.item_name}</p>
         </div>`;
       });
@@ -288,7 +288,7 @@ function lottery_func(_num) {
           res.result.forEach((i) => {
             loStr1 += `
             <div class="icon_box" data-id="${i.id}">
-            <img src="https://feliciaho.github.io/ghost_20231220/img/icon/${i.img}.jpg" alt="">
+            <img src="img/icon/${i.img}.jpg" alt="">
             <p>${i.item_name}</p>
             </div>`;
           });
@@ -319,7 +319,7 @@ function lottery_func(_num) {
         res.result.forEach((i) => {
           loStr1 += `
         <div class="icon_box" data-id="${i.id}">
-        <img src="https://feliciaho.github.io/ghost_20231220/img/icon/${i.img}.jpg" alt="">
+        <img src="img/icon/${i.img}.jpg" alt="">
         <p>${i.item_name}</p>
         </div>`;
         });
@@ -470,7 +470,7 @@ function lotteryHistory() {
       }
       // 活動紀錄列表
       str += `<tr>
-                  <td width="3%"><div class="list1"><img src="https://feliciaho.github.io/ghost_20231220/img/icon/${i.img}.jpg">${i.item_name}</div></th>
+                  <td width="3%"><div class="list1"><img src="img/icon/${i.img}.jpg">${i.item_name}</div></th>
                   <td width="1%">${i.count}</th>
                   ${sendStr}
               </tr>`;
@@ -549,7 +549,7 @@ function refreshHistory() {
       }
       str += `
         <tr>
-          <td width="2%"><div class="list1"><img src="https://feliciaho.github.io/ghost_20231220/img/icon/${item.img}.jpg">${item.item_name}</div></td>
+          <td width="2%"><div class="list1"><img src="img/icon/${item.img}.jpg">${item.item_name}</div></td>
           <td width="0.5%">${item.count}</td>
           <td width="1.25%">${item.used}</td>
           <td width="1.0%">${item.remaining}</td>
