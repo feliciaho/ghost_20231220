@@ -8,14 +8,12 @@
         position: relative;
         z-index: 2;
         @include size(100%, 975px);
-        background-image: url("/img/s1bg.jpg");
-        background-repeat: no-repeat;
+        background: url("/img/s1bg.jpg") no-repeat center center;
         background-size: cover;
         .content {
             display: flex;
             flex-direction: column;
             align-items: center;
-
             .title {
                 margin-top: 125px;
                 margin-left: 25px;
