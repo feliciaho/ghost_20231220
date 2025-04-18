@@ -4,10 +4,9 @@
     z-index: 1;
     display: block;
     .sec1 {
-        width: 100%;
         position: relative;
         z-index: 2;
-        @include size(100%, 975px);
+        @include size(1920px, 975px);
         background-image: url(../img/s1Bg.jpg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -19,7 +18,7 @@
                 margin-top: 125px;
                 margin-left: 25px;
                 @include size(635px, 484px);
-                background-image: url("../img/s1title.png");
+                background-image: url(../img/s1title.png);
             }
         }
     }
