@@ -67,17 +67,17 @@ function cancel() {
 // $(".approve_box").attr("data-approve", "0");
 // get取storage的值
 if(localStorage.getItem("skip") =="1"){
-  $(".approve_box").attr("src", "/img/passHover.png");
+  $(".approve_box").attr("src", "img/passHover.png");
   $(".approve_box").attr("data-approve", "true");
 }
 $(".approve").on("click", function () {
   let approve = $(".approve_box").attr("data-approve");
   if (approve == "false") {
-    $(".approve_box").attr("src", "/img/passHover.png");
+    $(".approve_box").attr("src", "img/passHover.png");
     $(".approve_box").attr("data-approve", "true");
     skip(1)
   } else if (approve == "true") {
-    $(".approve_box").attr("src", "/img/pass.png");
+    $(".approve_box").attr("src", "img/pass.png");
     $(".approve_box").attr("data-approve", "false");
     skip(0)
   }
