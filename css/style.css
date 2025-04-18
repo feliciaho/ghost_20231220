@@ -199,8 +199,8 @@ html ::-webkit-scrollbar-track {
 .main .sec1 {
   position: relative;
   z-index: 2;
-  width: 1920px;
-  height: 975px;
+  width: 2200px;
+  height: 1080px;
   background-image: url(../img/s1Bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -215,7 +215,7 @@ html ::-webkit-scrollbar-track {
   margin-left: 25px;
   width: 635px;
   height: 484px;
-  background-image: url(../img/s1title.png);
+  background-image: url(../img/s1Title.png);
 }
 
 #particles-js {
@@ -299,7 +299,7 @@ html ::-webkit-scrollbar-track {
   position: fixed;
   top: 0;
   z-index: 100;
-  width: 1920px;
+  width: 2200px;
 }
 .main .nav .nav_wrap {
   position: relative;
@@ -394,7 +394,7 @@ html ::-webkit-scrollbar-track {
 .footer {
   position: relative;
   background-image: url(../img/footerBg.jpg);
-  width: 1920px;
+  width: 2200px;
   height: 100px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -707,8 +707,8 @@ html ::-webkit-scrollbar-track {
 }
 
 .sec2 {
-  width: 1920px;
-  height: 975px;
+  width: 2200px;
+  height: 1080px;
   background-image: url(../img/s2Bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
