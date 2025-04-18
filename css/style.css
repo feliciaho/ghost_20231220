@@ -704,9 +704,10 @@ html ::-webkit-scrollbar-track {
 }
 
 .sec2 {
-  width: 1915px;
+  width: 100%;
   height: 975px;
-  background-image: url("../img/s2bg.jpg");
+  background: url("../img/s2bg.jpg") no-repeat center center;
+  background-size: cover;
   position: relative;
   left: 0px;
   top: 0px;
