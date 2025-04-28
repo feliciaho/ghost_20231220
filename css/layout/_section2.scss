@@ -1,7 +1,8 @@
 .sec2 {
-  @include size(2200px, 1118px);
+  @include size(1920px, 1118px);
   background-image: url(../img/s2Bg.jpg);
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   @include re-lt(0px, 0px);
   @extend %flex-center;

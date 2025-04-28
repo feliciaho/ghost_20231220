@@ -198,7 +198,7 @@ html ::-webkit-scrollbar-track {
 .main .sec1 {
   position: relative;
   z-index: 2;
-  width: 2200px;
+  width: 1920px;
   height: 1080px;
   background-image: url(../img/s1Bg.jpg);
   background-repeat: no-repeat;
@@ -287,7 +287,7 @@ html ::-webkit-scrollbar-track {
   position: fixed;
   top: 0;
   z-index: 100;
-  width: 2200px;
+  width: 1920px;
 }
 .main .nav .nav_wrap {
   position: relative;
@@ -382,7 +382,7 @@ html ::-webkit-scrollbar-track {
 .footer {
   position: relative;
   background-image: url(../img/footerBg.jpg);
-  width: 2200px;
+  width: 1920px;
   height: 100px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -693,10 +693,11 @@ html ::-webkit-scrollbar-track {
 }
 
 .sec2 {
-  width: 2200px;
+  width: 1920px;
   height: 1118px;
   background-image: url(../img/s2Bg.jpg);
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   position: relative;
   left: 0px;

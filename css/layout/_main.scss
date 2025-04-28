@@ -5,7 +5,7 @@
     .sec1 {
         position: relative;
         z-index: 2;
-        @include size(2200px, 1080px);
+        @include size(1920px, 1080px);
         background-image: url(../img/s1Bg.jpg);
         background-repeat: no-repeat;
         background-size: cover;
